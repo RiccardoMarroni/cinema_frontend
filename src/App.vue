@@ -7,7 +7,7 @@
 
 <script>
 import { store } from "./store";
-import AppHeader from "./components/AppHeader.vue";
+import AppHeader from "./components/FooterComponent.vue";
 export default {
   name: 'App',
   data() {
