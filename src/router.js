@@ -1,47 +1,42 @@
-import { createRouter, createWebHistory } from "vue-router";
-import AppHome from "./pages/AppHome.vue";
-import AppPosts from "./pages/AppPosts.vue";
-import SinglePost from "./pages/SinglePost.vue";
-import AppContact from "./pages/AppContact.vue";
-import NotFound from "./pages/NotFound.vue";
+import {createRouter, createWebHistory } from "vue-router";
+
+ import MovieList from './pages/MovieList.vue';
+ import MovieComponent  from "./pages/MovieComponent.vue";
+ import ScreeningComponent from "./pages/ScreeningComponent.vue";
+ import AboutComponent from "./pages/AboutComponent.vue";
+ import ContactComponent from "./pages/ContactComponent.vue";
+
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    {
-      path: "/",
-      name: "home",
-      component: AppHome,
-    },
-    {
-      path: "/posts",
-      name: "posts",
-      component: AppPosts
-    },
-    {
-      path: "/posts/:slug",
-      name: "single-post",
-      component: SinglePost
-    },
-    {
-      path: "/contacts",
-      name: "contacts",
-      component: AppContact
-    },
-    {
-      path: "/:pathMatch(.*)*",
-      name: "not-found",
-      component: NotFound
-    } 
-    // {
-    //   path: "/about",
-    //   name: "about",
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import("../pages/AboutView.vue"),
-    // },
-  ]
-});
+    history: createWebHistory(),
+    routes: [
+      
+        {
+            path: '/',
+            name: 'movieList',
+            component: MovieList
+        },
+        {
+            path: '/movies/:id',
+            name: 'single-movie',
+            component: MovieComponent
+        },
+        {
+            path: '/screening',
+            name: 'screening',
+            component: ScreeningComponent
+        },
+        {
+            path: "/about",
+            name: "about-us",
+            component: AboutComponent,
+        },
+        {
+            path: "/contact",
+            name: "contact",
+            component: ContactComponent,
+        },
+    ]
+})
 
-export default router;
+export {router};
